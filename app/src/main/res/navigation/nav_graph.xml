@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/introFragment"
+        android:name="com.bumbumapps.wallpaper.ui.fragments.IntroFragment"
+        android:label="IntroFragment" >
+        <action
+            android:id="@+id/action_introFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.bumbumapps.wallpaper.ui.fragments.SplashFragment"
+        android:label="SplashFragment" >
+        <action
+            android:id="@+id/action_splashFragment_to_introFragment"
+            app:destination="@id/introFragment"
+            />
+        <action
+            android:id="@+id/action_splashFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.bumbumapps.wallpaper.ui.fragments.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_wallpaperViewFragment"
+            app:destination="@id/wallpaperViewFragment"
+           />
+        <action
+            android:id="@+id/action_homeFragment_to_latestFragment"
+            app:destination="@id/latestFragment" />
+        <action
+            android:id="@+id/action_homeFragment_self"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_premiumFragment"
+            app:destination="@id/premiumFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/wallpaperViewFragment"
+        android:name="com.bumbumapps.wallpaper.ui.fragments.WallpaperViewFragment"
+        android:label="WallpaperViewFragment" >
+        <action
+            android:id="@+id/action_wallpaperViewFragment_to_editFragment"
+            app:destination="@id/editFragment" />
+        <action
+            android:id="@+id/action_wallpaperViewFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:exitAnim="@anim/slide_out"/>
+        <argument android:name="id"
+            android:defaultValue="1"
+            app:argType="integer"/>
+        <action
+            android:id="@+id/action_wallpaperViewFragment_to_latestFragment"
+            app:destination="@id/latestFragment" />
+        <action
+            android:id="@+id/action_wallpaperViewFragment_to_premiumFragment"
+            app:destination="@id/premiumFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editFragment"
+        android:name="com.bumbumapps.wallpaper.ui.fragments.EditFragment"
+        android:label="EditFragment" >
+        <action
+            android:id="@+id/action_editFragment_to_wallpaperViewFragment"
+            app:destination="@id/wallpaperViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/latestFragment"
+        android:name="com.bumbumapps.wallpaper.ui.fragments.LatestFragment"
+        android:label="LatestFragment" >
+        <action
+            android:id="@+id/action_latestFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_latestFragment_to_wallpaperViewFragment"
+            app:destination="@id/wallpaperViewFragment" />
+        <action
+            android:id="@+id/action_latestFragment_to_premiumFragment"
+            app:destination="@id/premiumFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/premiumFragment"
+        android:name="com.bumbumapps.wallpaper.ui.fragments.PremiumFragment"
+        android:label="PremiumFragment" >
+        <action
+            android:id="@+id/action_premiumFragment_to_latestFragment"
+            app:destination="@id/latestFragment" />
+        <action
+            android:id="@+id/action_premiumFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_premiumFragment_to_wallpaperViewFragment"
+            app:destination="@id/wallpaperViewFragment" />
+    </fragment>
+</navigation>

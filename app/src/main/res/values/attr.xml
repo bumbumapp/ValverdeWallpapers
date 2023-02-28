@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="backgroundScreen" format="color"/>
+    <attr name="textColor" format="color"/>
+    <attr name="button_backgroundColor" format="color"/>
+    <attr name="home_textColor" format="color"/>
+    <attr name="home_categoryColors" format="color"/>
+    <attr name="icon_tint" format="color"/>
+    <attr name="edit_icons_color" format="color"/>
+    <attr name="toggle_color" format="color"/>
+</resources>

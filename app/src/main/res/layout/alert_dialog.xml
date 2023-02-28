@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    app:cardCornerRadius="20dp"
+    app:cardBackgroundColor="@android:color/transparent"
+    app:backgroundTint="@android:color/transparent"
+    android:background="@android:color/transparent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="?attr/backgroundScreen"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="@string/set_as_my_wallpaper"
+            android:textColor="?attr/textColor"
+            android:textSize="20sp"
+            android:fontFamily="@font/montserrat_semibold"/>
+
+        <LinearLayout
+            android:id="@+id/set_wallpaper_home"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_below="@+id/text"
+            android:layout_marginStart="20dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_home_sceen"
+                android:id="@+id/set_wallpaper"
+                android:layout_marginEnd="30dp"
+                android:layout_gravity="center_vertical"
+                app:tint="@color/yellowTextColor" />
+            <TextView
+                android:id="@+id/sett"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/home_screen"
+                android:textColor="?attr/textColor"
+                android:textSize="17sp"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/font_600"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/set_wallpaper_lock"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_below="@+id/set_wallpaper_home"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_lock_scrreen"
+                android:id="@+id/lock"
+                android:layout_marginEnd="30dp"
+                android:layout_gravity="center_vertical"
+                app:tint="@color/yellowTextColor" />
+            <TextView
+                android:id="@+id/settr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lock_screen"
+                android:textColor="?attr/textColor"
+                android:textSize="17sp"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/font_600"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

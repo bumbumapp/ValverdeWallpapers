@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Wallpaper</string>
+    <string name="mobile_wallpapers">Mobile Wallpapers</string>
+    <string name="find_out_your_need">Find out your need</string>
+    <string name="get_started">Get Started</string>
+    <string name="wallpapers">Wallpapers</string>
+    <string name="all">All</string>
+    <string name="latest">Latest</string>
+    <string name="premium">Premium</string>
+    <string name="navigation_drawer_open">Open</string>
+    <string name="navigation_drawer_close">Close</string>
+    <string name="set_as_my_wallpaper">Set as my wallpaper</string>
+    <string name="edit">Edit</string>
+    <string name="home_screen">Home screen</string>
+    <string name="lock_screen">Lock screen</string>
+</resources>
