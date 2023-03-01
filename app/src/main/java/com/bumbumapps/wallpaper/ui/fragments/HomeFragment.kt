@@ -41,11 +41,6 @@ class HomeFragment:Fragment(),OnItemClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val toggle = ActionBarDrawerToggle(activity, binding?.drawerLayout,
-            R.string.navigation_drawer_open, R.string.navigation_drawer_close
-        )
-        binding?.drawerLayout?.addDrawerListener(toggle)
-        toggle.syncState()
         getImages()
      activity?.onBackPressedDispatcher?.addCallback {
          requireActivity().finishAffinity()
@@ -57,20 +52,6 @@ findNavController().navigate(R.id.action_homeFragment_to_latestFragment)
         binding?.premium?.setOnClickListener {
 findNavController().navigate(R.id.action_homeFragment_to_premiumFragment)
         }
-        // Set up the navigation drawer menu
-//        binding.navView.setNavigationItemSelectedListener { menuItem ->
-//            when (menuItem.itemId) {
-//                R.id.nav_item1 -> {
-//                    // Handle navigation item 1 click
-//                    true
-//                }
-//                R.id.nav_item2 -> {
-//                    // Handle navigation item 2 click
-//                    true
-//                }
-//                else -> false
-//            }
-//        }
     }
 
     private fun getImages() {

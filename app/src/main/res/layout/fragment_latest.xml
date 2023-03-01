@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/drawer_layout"
-    android:layout_width="match_parent"
-    android:background="?attr/backgroundScreen"
-    android:layout_height="match_parent">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:background="?attr/backgroundScreen"
         android:layout_height="match_parent">
 
         <RelativeLayout
@@ -26,19 +21,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginStart="20dp"
-                android:layout_toRightOf="@+id/toggle"
                 android:fontFamily="@font/montserrat_semibold"
                 android:text="@string/wallpapers"
                 android:textColor="?attr/home_textColor"
                 android:textSize="20sp" />
-            <ImageView
-                android:id="@+id/toggle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_toogle"
-                android:layout_alignParentStart="true"
-                app:tint="?attr/toggle_color" />
+
         </RelativeLayout>
 
         <TextView
@@ -101,13 +88,4 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- Navigation drawer -->
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:background="@android:color/white"
-        app:menu="@menu/nav_menu" />
 
-</androidx.drawerlayout.widget.DrawerLayout>

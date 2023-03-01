@@ -1,13 +1,11 @@
 package com.bumbumapps.wallpaper.ui.fragments
 
 import android.animation.ObjectAnimator
-import android.app.Activity.RESULT_OK
 import android.app.AlertDialog
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.drawable.BitmapDrawable
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -15,7 +13,6 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.activity.addCallback
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import androidx.core.view.isVisible
@@ -34,7 +31,9 @@ import com.bumbumapps.wallpaper.utils.rotateImage
 import com.bumbumapps.wallpaper.ui.viewmodel.RawImagesViewModel
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.soundcloud.android.crop.Crop
+import com.canhub.cropper.CropImageContract
+import com.canhub.cropper.CropImageView
+import com.canhub.cropper.options
 import java.io.File
 import jp.wasabeef.glide.transformations.ColorFilterTransformation
 import java.io.FileOutputStream
@@ -97,23 +96,34 @@ class EditFragment:Fragment(),OnEffectsItemClicked {
 
         }
         binding?.cancel?.setOnClickListener {
-            Glide.with(requireContext())
-                .load(viewModel.bitmapWallpaper)
-                .into(binding?.wallpaper!!)
-            viewModel.bitmap=viewModel.bitmapWallpaper
+            binding?.filterImage?.visibility=View.VISIBLE
+            binding?.rotateImage?.visibility=View.VISIBLE
+            binding?.cropImage?.visibility=View.VISIBLE
+            if (binding?.recyclerView?.isVisible!!){
+                binding?.recyclerView?.visibility=View.GONE
+                Glide.with(requireContext())
+                    .load(viewModel.bitmap)
+                    .into(binding?.wallpaper!!)
+                setReycleview()
+            }else{
+                Glide.with(requireContext())
+                    .load(viewModel.bitmapWallpaper)
+                    .into(binding?.wallpaper!!)
+                viewModel.bitmap=viewModel.bitmapWallpaper
+            }
+
 
         }
         val cropLauncher = registerForActivityResult(
-            ActivityResultContracts.StartActivityForResult()
+            CropImageContract()
         ) { result ->
-            if (result.resultCode == RESULT_OK) {
-                        val uri:Uri=getOutputUri()
+            if (result.isSuccessful) {
+                        val uri:Uri=result.uriContent!!
                         val inputStream =context?.contentResolver?.openInputStream(uri)
                         val bitmap = BitmapFactory.decodeStream(inputStream)
                         binding?.wallpaper?.setImageBitmap(bitmap)
                         viewModel.bitmap=bitmap
                        setReycleview()
-
             }
 
 
@@ -122,10 +132,15 @@ class EditFragment:Fragment(),OnEffectsItemClicked {
         }
         binding?.cropImage?.setOnClickListener {
                 val inputUri =bitmapToUri(viewModel.bitmap!!)
-                val outputUri = getOutputUri()// get the URI to save the cropped image
-                val intent=Crop.of(inputUri, outputUri).asSquare().getIntent(context)
-                cropLauncher.launch(intent)
+            cropLauncher.launch(
+                options(uri = inputUri) {
+                    setGuidelines(CropImageView.Guidelines.ON)
+                    setOutputCompressFormat(Bitmap.CompressFormat.JPEG)
+                }
+            )
         }
+
+
     }
 
 
@@ -155,7 +170,7 @@ class EditFragment:Fragment(),OnEffectsItemClicked {
 
     }
     private fun setHomeWallpaper(){
-        viewModel.setWallpaper(requireContext(), intToBitmap(viewModel.getImageFromRaw(),requireContext()))
+        viewModel.setWallpaper(requireContext(), viewModel.bitmap!!)
         viewModel.setWallpaperSuccess.observe(viewLifecycleOwner) { success ->
             if (success) {
                 Toast.makeText(
@@ -171,7 +186,7 @@ class EditFragment:Fragment(),OnEffectsItemClicked {
     }
 
     private fun setLockScreenWallpaper(){
-        viewModel.setLockScreenWallpaper(requireContext(), intToBitmap(viewModel.getImageFromRaw(),requireContext()))
+        viewModel.setLockScreenWallpaper(requireContext(), viewModel.bitmap!!)
         viewModel.setWallpaperSuccess.observe(viewLifecycleOwner) { success ->
             if (success) {
                 Toast.makeText(
@@ -192,17 +207,6 @@ class EditFragment:Fragment(),OnEffectsItemClicked {
         binding?.recyclerView?.adapter = adapter
     }
 
-    private fun getOutputUri(): Uri {
-        val cacheDir: File = context?.cacheDir!!
-        val fileName = "wallpaper.jpg"
-        val file = File(cacheDir, fileName)
-        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            FileProvider.getUriForFile(requireContext(), context?.applicationContext?.packageName+".provider", file)
-        } else {
-            Uri.fromFile(file)
-        }
-
-    }
     private fun bitmapToUri(bitmap: Bitmap): Uri {
         val file = File(context?.cacheDir, "image.jpg")
         val outputStream = FileOutputStream(file)
@@ -242,8 +246,5 @@ class EditFragment:Fragment(),OnEffectsItemClicked {
                 .apply(RequestOptions.bitmapTransform(ColorFilterTransformation(ContextCompat.getColor(requireContext(),
                     effectsResults()[position]))))
                 .into(binding?.wallpaper!!)
-
-
-
     }
 }
