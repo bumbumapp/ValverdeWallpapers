@@ -12,6 +12,8 @@
 <!--    light mode-->
 
     <color name="backgroundScreen">#0F0215</color>
+    <color name="swipe_color">#80FF9800</color>
+    <color name="swipe_color_second">#66FF9800</color>
     <color name="textColor">#FFFFFF</color>
     <color name="button_backgroundcolor">#0F0215</color>
     <color name="home_textColor">#E9E9E9</color>

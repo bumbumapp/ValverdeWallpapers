@@ -1,11 +1,11 @@
 package com.bumbumapps.wallpaper.ui.fragments
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.addCallback
-import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
@@ -16,6 +16,7 @@ import com.bumbumapps.wallpaper.R
 import com.bumbumapps.wallpaper.adapter.WallpapersAdapter
 import com.bumbumapps.wallpaper.databinding.PremiumFragmentBinding
 import com.bumbumapps.wallpaper.ui.listener.OnItemClickListener
+import com.bumbumapps.wallpaper.ui.listener.OnSwipeTouchListener
 import com.bumbumapps.wallpaper.utils.Constants.PREMIUM_WALLPAPERS_STARTED_INDEX
 import com.bumbumapps.wallpaper.utils.RawImagesResult
 import com.bumbumapps.wallpaper.ui.viewmodel.RawImagesViewModel
@@ -38,10 +39,17 @@ class PremiumFragment:Fragment(),OnItemClickListener {
 
     }
 
-
+    @SuppressLint("ClickableViewAccessibility")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         getImages()
+        binding.constraint.setOnTouchListener(object : OnSwipeTouchListener(requireContext()) {
+
+            override fun onSwipeRight() {
+                findNavController().navigate(R.id.action_premiumFragment_to_latestFragment)
+            }
+
+        })
 
 
         binding.all.setOnClickListener {
@@ -72,7 +80,6 @@ class PremiumFragment:Fragment(),OnItemClickListener {
                     setRecycleView(subLatestImages)
                 }
                 is RawImagesResult.Error -> {
-                    // handle the error message
                     val message = result.message
                 }
             }

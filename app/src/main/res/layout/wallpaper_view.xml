@@ -3,50 +3,73 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="?attr/backgroundScreen"
     android:layout_height="match_parent">
+
     <Button
         android:id="@+id/set_wallpaper"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:background="@drawable/butto_background"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="30dp"
+        android:background="@drawable/set_wallpaper_background"
+        android:fontFamily="@font/font_600"
+        android:lineSpacingExtra="-4sp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:text="@string/set_as_my_wallpaper"
+        android:textAllCaps="false"
         android:textColor="?attr/textColor"
         android:textSize="16sp"
-        android:layout_alignParentBottom="true"
-        android:fontFamily="@font/font_600"
-        app:backgroundTint="?attr/button_backgroundColor"
-        android:text="@string/set_as_my_wallpaper" />
+        app:backgroundTint="?attr/button_backgroundColor" />
 
 
-    <ImageView
-        android:id="@+id/wallpaper"
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vp_wallpaper"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop" />
+        android:layout_height="match_parent" />
 
     <ImageButton
         android:id="@+id/back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="20dp"
-        android:backgroundTint="@android:color/transparent"
+        android:background="@drawable/circle_button_backgroun"
+        android:padding="7dp"
+        app:backgroundTint="?attr/button_backgroundColor"
         app:srcCompat="@drawable/back_button"
         app:tint="?attr/textColor" />
 
     <ImageButton
         android:id="@+id/edit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
         android:layout_alignParentRight="true"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:backgroundTint="@android:color/transparent"
-        app:srcCompat="@drawable/edit_button"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/circle_button_backgroun"
+        android:padding="7dp"
+        app:backgroundTint="@color/button_backgroundcolor"
+        app:srcCompat="@drawable/button_edit"
         app:tint="?attr/textColor" />
+
+    <ImageView
+        android:id="@+id/left"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_chevrons_right" />
+
+    <ImageView
+        android:id="@+id/right"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/ic_chevrons_left" />
 
 </RelativeLayout>

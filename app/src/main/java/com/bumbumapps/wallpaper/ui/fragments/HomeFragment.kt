@@ -1,13 +1,14 @@
 package com.bumbumapps.wallpaper.ui.fragments
 
 
+
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import android.widget.Toast
 import androidx.activity.addCallback
-import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.core.view.GestureDetectorCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
@@ -15,12 +16,13 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.bumbumapps.wallpaper.R
-import com.bumbumapps.wallpaper.utils.RawImagesResult
-import com.bumbumapps.wallpaper.ui.viewmodel.RawImagesViewModel
 import com.bumbumapps.wallpaper.adapter.WallpapersAdapter
 import com.bumbumapps.wallpaper.databinding.HomeFragmentBinding
 import com.bumbumapps.wallpaper.ui.listener.OnItemClickListener
+import com.bumbumapps.wallpaper.ui.listener.OnSwipeTouchListener
+import com.bumbumapps.wallpaper.ui.viewmodel.RawImagesViewModel
 import com.bumbumapps.wallpaper.utils.Constants.PREMIUM_WALLPAPERS_STARTED_INDEX
+import com.bumbumapps.wallpaper.utils.RawImagesResult
 
 
 class HomeFragment:Fragment(),OnItemClickListener {
@@ -38,10 +40,17 @@ class HomeFragment:Fragment(),OnItemClickListener {
 
         return binding?.root
     }
-
+    @SuppressLint("ClickableViewAccessibility")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         getImages()
+
+
+        binding?.constraint?.setOnTouchListener(object :OnSwipeTouchListener(requireContext()){
+            override fun onSwipeLeft() {
+                findNavController().navigate(R.id.action_homeFragment_to_latestFragment)
+            }
+        })
      activity?.onBackPressedDispatcher?.addCallback {
          requireActivity().finishAffinity()
      }

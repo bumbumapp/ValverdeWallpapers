@@ -3,10 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Durkhan/AndroidStudioProjects/Wallpaper/app/src/main/res/drawable/back_button.xml" value="0.1895" />
         <entry key="..\:/Users/Durkhan/AndroidStudioProjects/Wallpaper/app/src/main/res/drawable/butto_background.xml" value="0.1895" />
+        <entry key="..\:/Users/Durkhan/AndroidStudioProjects/Wallpaper/app/src/main/res/drawable/button_edit.xml" value="0.1895" />
+        <entry key="..\:/Users/Durkhan/AndroidStudioProjects/Wallpaper/app/src/main/res/drawable/circle_button_backgroun.xml" value="0.1895" />
+        <entry key="..\:/Users/Durkhan/AndroidStudioProjects/Wallpaper/app/src/main/res/drawable/edit_button.xml" value="0.1895" />
         <entry key="..\:/Users/Durkhan/AndroidStudioProjects/Wallpaper/app/src/main/res/drawable/ic_add_text.xml" value="0.1895" />
+        <entry key="..\:/Users/Durkhan/AndroidStudioProjects/Wallpaper/app/src/main/res/drawable/ic_cancel.xml" value="0.1895" />
+        <entry key="..\:/Users/Durkhan/AndroidStudioProjects/Wallpaper/app/src/main/res/drawable/ic_chevrons_left.xml" value="0.1895" />
+        <entry key="..\:/Users/Durkhan/AndroidStudioProjects/Wallpaper/app/src/main/res/drawable/ic_chevrons_right.xml" value="0.1895" />
+        <entry key="..\:/Users/Durkhan/AndroidStudioProjects/Wallpaper/app/src/main/res/drawable/ic_filter.xml" value="0.1895" />
         <entry key="..\:/Users/Durkhan/AndroidStudioProjects/Wallpaper/app/src/main/res/drawable/ic_home_sceen.xml" value="0.1895" />
         <entry key="..\:/Users/Durkhan/AndroidStudioProjects/Wallpaper/app/src/main/res/drawable/ic_tick.xml" value="0.1895" />
+        <entry key="..\:/Users/Durkhan/AndroidStudioProjects/Wallpaper/app/src/main/res/drawable/set_wallpaper_background.xml" value="0.138" />
         <entry key="..\:/Users/Durkhan/AndroidStudioProjects/Wallpaper/app/src/main/res/drawable/wallpaper_drawable1.xml" value="0.138" />
         <entry key="..\:/Users/Durkhan/AndroidStudioProjects/Wallpaper/app/src/main/res/drawable/wallpaper_drawable2.xml" value="0.137" />
         <entry key="..\:/Users/Durkhan/AndroidStudioProjects/Wallpaper/app/src/main/res/font/font.xml" value="0.29791666666666666" />
@@ -17,15 +26,16 @@
         <entry key="..\:/Users/Durkhan/AndroidStudioProjects/Wallpaper/app/src/main/res/layout/adapter_effects.xml" value="0.21784420289855072" />
         <entry key="..\:/Users/Durkhan/AndroidStudioProjects/Wallpaper/app/src/main/res/layout/alert_dialog.xml" value="0.12760416666666666" />
         <entry key="..\:/Users/Durkhan/AndroidStudioProjects/Wallpaper/app/src/main/res/layout/content_main.xml" value="0.21784420289855072" />
-        <entry key="..\:/Users/Durkhan/AndroidStudioProjects/Wallpaper/app/src/main/res/layout/edit_fragment.xml" value="0.21784420289855072" />
+        <entry key="..\:/Users/Durkhan/AndroidStudioProjects/Wallpaper/app/src/main/res/layout/edit_fragment.xml" value="0.2" />
         <entry key="..\:/Users/Durkhan/AndroidStudioProjects/Wallpaper/app/src/main/res/layout/fragment_latest.xml" value="0.21784420289855072" />
         <entry key="..\:/Users/Durkhan/AndroidStudioProjects/Wallpaper/app/src/main/res/layout/home_fragment.xml" value="0.176" />
+        <entry key="..\:/Users/Durkhan/AndroidStudioProjects/Wallpaper/app/src/main/res/layout/image_view.xml" value="0.21784420289855072" />
         <entry key="..\:/Users/Durkhan/AndroidStudioProjects/Wallpaper/app/src/main/res/layout/intro_screen.xml" value="0.21784420289855072" />
         <entry key="..\:/Users/Durkhan/AndroidStudioProjects/Wallpaper/app/src/main/res/layout/item_small.xml" value="0.21784420289855072" />
         <entry key="..\:/Users/Durkhan/AndroidStudioProjects/Wallpaper/app/src/main/res/layout/item_small2.xml" value="0.21784420289855072" />
         <entry key="..\:/Users/Durkhan/AndroidStudioProjects/Wallpaper/app/src/main/res/layout/premium_fragment.xml" value="0.21784420289855072" />
         <entry key="..\:/Users/Durkhan/AndroidStudioProjects/Wallpaper/app/src/main/res/layout/splash_fragment.xml" value="0.21784420289855072" />
-        <entry key="..\:/Users/Durkhan/AndroidStudioProjects/Wallpaper/app/src/main/res/layout/wallpaper_view.xml" value="0.21784420289855072" />
+        <entry key="..\:/Users/Durkhan/AndroidStudioProjects/Wallpaper/app/src/main/res/layout/wallpaper_view.xml" value="0.264" />
         <entry key="..\:/Users/Durkhan/AndroidStudioProjects/Wallpaper/app/src/main/res/layout/wallpapers.xml" value="0.1265625" />
         <entry key="..\:/Users/Durkhan/AndroidStudioProjects/Wallpaper/app/src/main/res/layout/wallpapers1.xml" value="0.21784420289855072" />
         <entry key="..\:/Users/Durkhan/AndroidStudioProjects/Wallpaper/app/src/main/res/menu/nav_menu.xml" value="0.26875" />

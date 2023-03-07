@@ -51,6 +51,7 @@
         android:paddingEnd="60dp"
         android:textAllCaps="false"
         android:textSize="16sp"
+        android:textColor="?attr/textColor"
         android:fontFamily="@font/font_400"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"

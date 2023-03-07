@@ -17,7 +17,7 @@
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="13dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
@@ -41,9 +41,7 @@
             android:fontFamily="@font/font_600"
             android:text="@string/edit"
             android:textColor="?attr/home_textColor"
-            android:textSize="20sp"
-
-            />
+            android:textSize="24sp" />
     </RelativeLayout>
 
     <androidx.cardview.widget.CardView

@@ -1,11 +1,11 @@
 package com.bumbumapps.wallpaper.ui.fragments
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.addCallback
-import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
@@ -16,6 +16,7 @@ import com.bumbumapps.wallpaper.R
 import com.bumbumapps.wallpaper.adapter.WallpapersAdapter
 import com.bumbumapps.wallpaper.databinding.FragmentLatestBinding
 import com.bumbumapps.wallpaper.ui.listener.OnItemClickListener
+import com.bumbumapps.wallpaper.ui.listener.OnSwipeTouchListener
 import com.bumbumapps.wallpaper.utils.Constants.LATEST_WALLPAPERS_ENDED_INDEX
 import com.bumbumapps.wallpaper.utils.Constants.LATEST_WALLPAPERS_STARTED_INDEX
 import com.bumbumapps.wallpaper.utils.RawImagesResult
@@ -39,21 +40,36 @@ class LatestFragment: Fragment(),OnItemClickListener {
 
     }
 
-
+    @SuppressLint("ClickableViewAccessibility")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         getImages()
 
+        binding.constraint.setOnTouchListener(object : OnSwipeTouchListener(requireContext()) {
 
+            override fun onSwipeLeft() {
+                findNavController().navigate(R.id.action_latestFragment_to_premiumFragment)
+            }
+
+            override fun onSwipeRight() {
+                findNavController().navigate(R.id.action_latestFragment_to_homeFragment)
+            }
+        })
         binding.all.setOnClickListener {
             findNavController().navigate(R.id.action_latestFragment_to_homeFragment)
         }
         binding.premium.setOnClickListener {
-            findNavController().navigate(R.id.action_latestFragment_to_premiumFragment)
-        }
 
-        activity?.onBackPressedDispatcher?.addCallback {
-            findNavController().popBackStack()
+            binding.all.setOnClickListener {
+                findNavController().navigate(R.id.action_latestFragment_to_homeFragment)
+            }
+            binding.premium.setOnClickListener {
+                findNavController().navigate(R.id.action_latestFragment_to_premiumFragment)
+            }
+
+            activity?.onBackPressedDispatcher?.addCallback {
+                findNavController().popBackStack()
+            }
         }
     }
 
@@ -70,7 +86,6 @@ class LatestFragment: Fragment(),OnItemClickListener {
                     setRecycleView(subLatestImages)
                 }
                 is RawImagesResult.Error -> {
-                    // handle the error message
                     val message = result.message
                 }
             }
