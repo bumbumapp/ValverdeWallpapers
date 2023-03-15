@@ -8,7 +8,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.bumbumapps.wallpaper"
+        applicationId "com.lordapps.hallandwallpaper"
         minSdk 21
         targetSdk 33
         versionCode 1

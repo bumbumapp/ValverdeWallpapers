@@ -12,5 +12,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "Wallpaper"
+rootProject.name = "HallandWallpaper"
 include ':app'
