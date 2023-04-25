@@ -17,10 +17,9 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-
-
-
-
+    lintOptions {
+        checkReleaseBuilds false
+    }
     buildTypes {
         release {
             minifyEnabled true
@@ -67,6 +66,7 @@ dependencies {
 
     implementation "androidx.datastore:datastore-preferences:1.0.0"
     implementation "androidx.activity:activity-ktx:1.4.0"
+    implementation 'com.google.android.gms:play-services-ads:21.5.0'
 
 
 }

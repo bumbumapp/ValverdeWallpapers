@@ -13,4 +13,13 @@
     <string name="edit">Edit</string>
     <string name="home_screen">Home screen</string>
     <string name="lock_screen">Lock screen</string>
+    <string name="watch_video">Watch a video for\npremium wallpapers</string>
+
+
+
+    //ads ids
+    <string name="banner_app_id">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="banner_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="inter_unit_id">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="rewarded_video_id">ca-app-pub-3940256099942544/5224354917</string>
 </resources>

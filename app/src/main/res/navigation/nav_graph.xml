@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/introFragment"
-        android:name="com.bumbumapps.wallpaper.ui.fragments.IntroFragment"
+        android:name="com.lordapps.wallpaper.ui.fragments.IntroFragment"
         android:label="IntroFragment" >
         <action
             android:id="@+id/action_introFragment_to_homeFragment"
@@ -15,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.bumbumapps.wallpaper.ui.fragments.SplashFragment"
+        android:name="com.lordapps.wallpaper.ui.fragments.SplashFragment"
         android:label="SplashFragment" >
         <action
             android:id="@+id/action_splashFragment_to_introFragment"
@@ -27,7 +27,7 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.bumbumapps.wallpaper.ui.fragments.HomeFragment"
+        android:name="com.lordapps.wallpaper.ui.fragments.HomeFragment"
         android:label="HomeFragment" >
         <action
             android:id="@+id/action_homeFragment_to_wallpaperViewFragment"
@@ -46,7 +46,7 @@
     </fragment>
     <fragment
         android:id="@+id/wallpaperViewFragment"
-        android:name="com.bumbumapps.wallpaper.ui.fragments.WallpaperViewFragment"
+        android:name="com.lordapps.wallpaper.ui.fragments.WallpaperViewFragment"
         android:label="WallpaperViewFragment" >
         <action
             android:id="@+id/action_wallpaperViewFragment_to_editFragment"
@@ -67,7 +67,7 @@
     </fragment>
     <fragment
         android:id="@+id/editFragment"
-        android:name="com.bumbumapps.wallpaper.ui.fragments.EditFragment"
+        android:name="com.lordapps.wallpaper.ui.fragments.EditFragment"
         android:label="EditFragment" >
         <action
             android:id="@+id/action_editFragment_to_wallpaperViewFragment"
@@ -75,7 +75,7 @@
     </fragment>
     <fragment
         android:id="@+id/latestFragment"
-        android:name="com.bumbumapps.wallpaper.ui.fragments.LatestFragment"
+        android:name="com.lordapps.wallpaper.ui.fragments.LatestFragment"
         android:label="LatestFragment" >
         <action
             android:id="@+id/action_latestFragment_to_homeFragment"
@@ -89,7 +89,7 @@
     </fragment>
     <fragment
         android:id="@+id/premiumFragment"
-        android:name="com.bumbumapps.wallpaper.ui.fragments.PremiumFragment"
+        android:name="com.lordapps.wallpaper.ui.fragments.PremiumFragment"
         android:label="PremiumFragment" >
         <action
             android:id="@+id/action_premiumFragment_to_latestFragment"

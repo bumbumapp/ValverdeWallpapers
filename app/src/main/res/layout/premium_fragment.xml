@@ -65,7 +65,24 @@
             app:spanCount="1"
             />
 
-
+    <Button
+        android:id="@+id/watch_video"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@drawable/butto_background"
+        android:text="@string/watch_video"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        app:backgroundTint="@color/dark_blue"
+        android:textColor="@color/yellowTextColor"
+        android:fontFamily="@font/font_400"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/recyclerView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/recyclerView"
+        app:layout_constraintVertical_bias="0.912"
+        tools:ignore="HardcodedText" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
