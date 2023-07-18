@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">Halland Wallpapers</string>
+    <string name="app_name">Valverde Wallpapers</string>
     <string name="mobile_wallpapers">Mobile Wallpapers</string>
     <string name="find_out_your_need">Find out your need</string>
     <string name="get_started">Get started</string>
-    <string name="wallpapers">Halland Wallpapers</string>
+    <string name="wallpapers">Valverde Wallpapers</string>
     <string name="all">All</string>
     <string name="latest">Latest</string>
     <string name="premium">Premium</string>
